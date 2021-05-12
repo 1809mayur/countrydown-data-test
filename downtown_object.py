@@ -31,7 +31,7 @@ class DowntownHotels:
         
         # fetched all the image urls and assinged it into list
         for image in images:   
-            self.image_urls.append(image.get_attribute('src'))
+            self.image_urls.append(image.find_element_by_tag_name('img').get_attribute('src'))
 
         # counts all the hotel on our page.
         hotel_links = self.driver.find_elements_by_class_name('place-square__btn')
@@ -79,6 +79,9 @@ class DowntownHotels:
         
         # make a dataframe.
         df = pd.DataFrame.from_dict(hotel_dictionary,orient='index')
+
+        print(df)
+
         df.to_csv('hotel_data.csv')
 
 
