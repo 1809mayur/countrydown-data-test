@@ -140,3 +140,7 @@ cython_debug/
 # file
 images.py
 .exe
+chromedriver.exe
+Pipfile
+README.md 
+downtown.py
